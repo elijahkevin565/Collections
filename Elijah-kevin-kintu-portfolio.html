@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elijah Kevin Kintu — beginner cybersecurity and IT portfolio showcasing skills, learning projects, and contact information.">
+  <title>Elijah Kevin Kintu — Cybersecurity Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020; --panel: #121a2d; --panel2: #17223a;
+      --text: #f3f6ff; --muted: #a7b2cc; --accent: #76e4c4;
+      --line: rgba(255,255,255,.12); --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: radial-gradient(ellipse at top right, #1a3150 0, var(--bg) 45%); color: var(--text); font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(11,16,32,.78); border-bottom: 1px solid var(--line); }
+    nav { display: flex; justify-content: space-between; align-items: center; min-height: 76px; gap: 24px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.15rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover, .textlink:hover { color: var(--accent); }
+    .hero { padding: 100px 0 86px; display: grid; grid-template-columns: 1.3fr .7fr; gap: 56px; align-items: center; }
+    .eyebrow { color: var(--accent); font-size: .78rem; text-transform: uppercase; letter-spacing: .18em; font-weight: 800; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: .99; letter-spacing: -.065em; margin: 20px 0; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .lead { max-width: 640px; color: var(--muted); font-size: 1.1rem; }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; padding: 12px 19px; border-radius: 10px; font-weight: 750; border: 1px solid var(--line); transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .primary { background: var(--accent); color: #07131a; border-color: var(--accent); }
+    .portrait { min-height: 330px; border: 1px solid var(--line); border-radius: 28px; padding: 26px; background: linear-gradient(145deg, rgba(118,228,196,.13), rgba(23,34,58,.9)); display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 24px 80px rgba(0,0,0,.22); }
+    .monogram { width: 100px; height: 100px; display: grid; place-items: center; border-radius: 24px; background: var(--accent); color: #07131a; font-size: 2rem; font-weight: 900; letter-spacing: -.08em; }
+    .portrait small { color: var(--muted); }
+    section { padding: 72px 0; border-top: 1px solid var(--line); }
+    .sectionhead { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.05em; margin: 8px 0 0; }
+    .sectionintro { max-width: 470px; color: var(--muted); margin: 0; }
+    .aboutgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .panel { border: 1px solid var(--line); background: rgba(18,26,45,.78); border-radius: 18px; padding: 26px; }
+    .panel p { color: var(--muted); margin-bottom: 0; }
+    .stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .stat { background: var(--panel2); border-radius: 14px; padding: 18px; }
+    .stat strong { display: block; font-size: 1.5rem; color: var(--accent); }
+    .stat span { color: var(--muted); font-size: .9rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: rgba(23,34,58,.75); color: #dce5fa; font-size: .92rem; }
+    .projects { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .project { min-height: 265px; display: flex; flex-direction: column; }
+    .projectnum { color: var(--accent); font-weight: 800; font-size: .8rem; letter-spacing: .12em; }
+    .project h3 { font-size: 1.3rem; margin: 20px 0 8px; letter-spacing: -.03em; }
+    .project p { color: var(--muted); margin: 0 0 20px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+    .tags span { font-size: .75rem; color: var(--accent); background: rgba(118,228,196,.09); padding: 5px 8px; border-radius: 6px; }
+    .contactgrid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px; }
+    .contactlist { display: grid; gap: 12px; margin-top: 22px; }
+    .contactitem { padding: 14px 16px; background: var(--panel2); border-radius: 12px; overflow-wrap: anywhere; }
+    .contactitem small { display: block; color: var(--muted); }
+    form { display: grid; gap: 14px; }
+    label { display: block; color: var(--muted); font-size: .9rem; margin-bottom: 5px; }
+    input, textarea { width: 100%; background: #0b1223; border: 1px solid var(--line); color: var(--text); border-radius: 10px; padding: 12px 13px; font: inherit; }
+    input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    textarea { min-height: 125px; resize: vertical; }
+    .formnote { color: var(--muted); font-size: .82rem; margin: 0; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .88rem; }
+    .footrow { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    @media (max-width: 780px) {
+      .hero, .aboutgrid, .contactgrid { grid-template-columns: 1fr; }
+      .hero { padding-top: 70px; gap: 30px; }
+      .portrait { min-height: 230px; }
+      .projects { grid-template-columns: 1fr; }
+      .sectionhead { display: block; }
+      .sectionintro { margin-top: 14px; }
+      .navlinks { gap: 12px; font-size: .82rem; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      nav { align-items: flex-start; padding: 18px 0; flex-direction: column; gap: 12px; }
+      .navlinks { flex-wrap: wrap; }
+      h1 { font-size: 3.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">ELIJAH<span> KINTU</span>.</a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home" style="border-top:0">
+      <div>
+        <div class="eyebrow">Portfolio · 2026</div>
+        <h1>Hello, I'm<br><em>Elijah Kintu.</em></h1>
+        <p class="lead">I'm an aspiring <strong>Cybersecurity / IT professional</strong> building practical skills in Python, data enumeration, and security fundamentals. I’m focused on learning responsibly, documenting my work, and developing hands-on experience.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work ↗</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <aside class="portrait" aria-label="Professional introduction">
+        <div class="monogram">EK</div>
+        <div><div class="eyebrow">A little about me</div><h3>Curious by nature.<br>Focused on impact.</h3><small>Cybersecurity / IT · Beginner</small></div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">01 / About</div><h2>A bit about me.</h2></div><p class="sectionintro">A short introduction to who you are, what you do, and the kind of work you want to be known for.</p></div>
+        <div class="aboutgrid">
+          <div class="panel"><h3>My story</h3><p>I’m at the beginning of my cybersecurity and IT journey, developing foundational technical skills through study and hands-on practice. I’m especially interested in Python and data enumeration, and I want to grow my understanding of how systems work and how to assess them responsibly. I’m building a portfolio to document my learning, projects, and progress.</p></div>
+          <div class="stats">
+            <div class="stat"><strong>In progress</strong><span>Hands-on learning</span></div>
+            <div class="stat"><strong>3</strong><span>Focus areas</span></div>
+            <div class="stat"><strong>2026</strong><span>Portfolio year</span></div>
+            <div class="stat"><strong>Always</strong><span>Learning and improving</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">02 / Skills</div><h2>What I bring.</h2></div><p class="sectionintro">Current learning areas. Add tools and techniques as you gain hands-on experience.</p></div>
+        <div class="panel">
+          <h3>Technical skills</h3>
+          <div class="skills"><span class="chip">Python (learning)</span><span class="chip">Data enumeration</span><span class="chip">Cybersecurity fundamentals</span><span class="chip">IT fundamentals</span><span class="chip">GitHub</span></div>
+          <h3 style="margin-top:28px">Professional strengths</h3>
+          <div class="skills"><span class="chip">Problem solving</span><span class="chip">Communication</span><span class="chip">Teamwork</span><span class="chip">Adaptability</span><span class="chip">Continuous learning</span></div>
+          <p style="color:var(--muted);margin:24px 0 0">Security practice note: perform enumeration and testing only on systems you own or have explicit permission to assess.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">03 / Selected work</div><h2>Projects I'm proud of.</h2></div><p class="sectionintro">These are project slots for work you complete. Add only projects you have actually done, with clear scope, tools, and lessons learned.</p></div>
+        <div class="projects">
+          <article class="panel project"><div class="projectnum">PROJECT 01</div><h3>Python practice project</h3><p>Project slot: add a small Python script you have built, explain its purpose, and describe what you learned. No project is claimed here yet.</p><div class="tags"><span>Python</span><span>Learning</span></div><p style="margin:16px 0 0"><a class="textlink" href="#contact" aria-label="Project one link">Add repository link ↗</a></p></article>
+          <article class="panel project"><div class="projectnum">PROJECT 02</div><h3>Data enumeration lab</h3><p>Project slot: document an authorized lab exercise, its scope, the enumeration methods used, and defensive takeaways. Add details after completing the exercise.</p><div class="tags"><span>Enumeration</span><span>Authorized lab</span></div><p style="margin:16px 0 0"><a class="textlink" href="#contact" aria-label="Project two link">Add write-up link ↗</a></p></article>
+          <article class="panel project"><div class="projectnum">PROJECT 03</div><h3>Learning notes on GitHub</h3><p>Project slot: publish study notes, code samples, or lab write-ups in a GitHub repository as you create them. Link your actual profile or repository when ready.</p><div class="tags"><span>GitHub</span><span>Documentation</span></div><p style="margin:16px 0 0"><a class="textlink" href="#contact" aria-label="Project three link">Add GitHub link ↗</a></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">04 / Contact</div><h2>Let's connect.</h2></div><p class="sectionintro">Open to professional opportunities, collaborations, and interesting projects.</p></div>
+        <div class="contactgrid">
+          <div class="panel"><h3>Contact details</h3><p style="color:var(--muted)">Replace the placeholders below with the contact details you want to share publicly.</p>
+            <div class="contactlist">
+              <div class="contactitem"><small>Email</small><a class="textlink" href="mailto:YOUR_EMAIL@example.com">Add your email address</a></div>
+              <div class="contactitem"><small>LinkedIn</small><a class="textlink" href="#contact">Add your LinkedIn URL ↗</a></div>
+              <div class="contactitem"><small>GitHub / Portfolio</small><a class="textlink" href="#contact">Add your GitHub profile URL ↗</a></div>
+              <div class="contactitem"><small>Location</small>[Your city, country]</div>
+            </div>
+          </div>
+          <div class="panel"><h3>Send a message</h3>
+            <form id="contactForm">
+              <div><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Jane Doe"></div>
+              <div><label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="jane@example.com"></div>
+              <div><label for="message">Message</label><textarea id="message" name="message" required placeholder="Tell me a little about what you have in mind..."></textarea></div>
+              <button class="btn primary" type="submit">Prepare email ↗</button>
+              <p class="formnote">Before publishing, replace YOUR_EMAIL@example.com in the page and script with your real email. This form opens your email app; it does not send or store messages by itself.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footrow"><span>© <span id="year"></span> Elijah Kevin Kintu. All rights reserved.</span><a class="textlink" href="#home">Back to top ↑</a></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const destination = 'YOUR_EMAIL@example.com'; // Replace with your real email address.
+      const subject = encodeURIComponent('Portfolio enquiry from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.location.href = 'mailto:' + destination + '?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
